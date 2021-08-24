@@ -55,7 +55,7 @@ export function ListWrapper({
   account,
   todoList
 }) {
-  const listName = useQuery().get('name');
+  // const listName = useQuery().get('name');
   const [items, setItems] = useState([]);
   const [saving, setSaving] = useState(false);
 
@@ -64,18 +64,11 @@ export function ListWrapper({
    */
   useEffect(() => {
     (async function() {
-      setupUpdateListListener();
+      // setupUpdateListListener();
       setItems(await getItems());
     })();
   }, []);
 
-  /****************************
-   * MOCK
-   * Used until back-end is
-   * implemented
-   ****************************/
-
-  // @TODO: Consolidate with what is in story
   function checkItem(index, checked) {
     setItems(previousState => {
       const updatedState = [...previousState];
@@ -85,16 +78,19 @@ export function ListWrapper({
   }
 
   async function getItems() {
-    return await todoList.methods.getListItems(listName).call();
+    return new Promise(resolve => {
+      resolve([{ name: 'Apple', checked: false }, { name: 'Pears', checked: true }]);
+    });
+    // return await todoList.methods.getListItems(listName).call();
   }
 
   async function onSave(event) {
     event.preventDefault();
     setSaving(true);
-    // setTimeout(() => {
-    //   setSaving(false);
-    // }, 3000);
-    await todoList.methods.updateList(listName, items).send({ from: account });
+    setTimeout(() => {
+      setSaving(false);
+    }, 3000);
+    // await todoList.methods.updateList(listName, items).send({ from: account });
   }
 
   function onSubmit(value) {
@@ -104,11 +100,11 @@ export function ListWrapper({
   /**
    * @description Setting event handler for new post
    */
-  function setupUpdateListListener() {
-    todoList.events.ListUpdated({}, () => {
-      setSaving(false);
-    });
-  }
+  // function setupUpdateListListener() {
+  //   todoList.events.ListUpdated({}, () => {
+  //     setSaving(false);
+  //   });
+  // }
 
   return (
     <LoadingOverlay

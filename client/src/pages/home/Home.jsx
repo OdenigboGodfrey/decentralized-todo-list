@@ -52,35 +52,38 @@ export function HomeWrapper({
    */
   useEffect(() => {
     (async function() {
-      setupCreateListListener();
+      // setupCreateListListener();
       setLists(await getLists());
     })();
   }, []);
 
   async function getLists() {
-    return await todoList.methods.getAllListNames().call();
+    return new Promise(resolve => {
+      resolve(['First List', 'Second List']);
+    });
+    // return await todoList.methods.getAllListNames().call();
   }
 
   async function onSubmit(value) {
     setSubmittingNewList(true);
-    // setTimeout(() => {
-    //   setLists(previousState => ([...previousState, { name: value }]));
-    //   setSubmittingNewList(false);
-    // }, 5000);
+    setTimeout(() => {
+      setLists(previousState => ([...previousState, value]));
+      setSubmittingNewList(false);
+    }, 5000);
     // add new post to blockchain
-    await todoList.methods.createList(value).send({ from: account });
+    // await todoList.methods.createList(value).send({ from: account });
   }
 
   /**
    * @description Setting event handler for new post
    */
-  function setupCreateListListener() {
-    todoList.events.ListCreated({}, (error, contractEvent) => {
-      console.log('contractEvent.returnValues.name', contractEvent.returnValues.name);
-      setLists(previousState => [...previousState, contractEvent.returnValues.name])
-      setSubmittingNewList(false);
-    });
-  }
+  // function setupCreateListListener() {
+  //   todoList.events.ListCreated({}, (error, contractEvent) => {
+  //     console.log('contractEvent.returnValues.name', contractEvent.returnValues.name);
+  //     setLists(previousState => [...previousState, contractEvent.returnValues.name])
+  //     setSubmittingNewList(false);
+  //   });
+  // }
 
   return (
     <LoadingOverlay
