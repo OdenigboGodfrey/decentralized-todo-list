@@ -15,10 +15,10 @@ contract('TodoList', accounts => {
     it('should add the new and empty list for a given user', async () => {
       const tx = await todoList.createList(FIRST_LIST);
       truffleAssert.eventEmitted(tx, 'ListCreated', (event) => {
-        const { listName, index } = event;
+        const { name, index } = event;
         return (
-          listName === FIRST_LIST &&
-          index === 0
+          name === FIRST_LIST &&
+          parseInt(index.toString()) === 0
         );
       });
     });
@@ -26,9 +26,9 @@ contract('TodoList', accounts => {
     it('should be able to add a second list for a given user', async () => {
       const tx = await todoList.createList(SECOND_LIST);
       truffleAssert.eventEmitted(tx, 'ListCreated', (event) => {
-        const { listName, index } = event;
+        const { name, index } = event;
         return (
-          listName === SECOND_LIST &&
+          name === SECOND_LIST &&
           index === 1
         );
       })
@@ -38,55 +38,45 @@ contract('TodoList', accounts => {
   describe('getAllListNames', () => {
     it('should return a delimited string containing all of the names', async () => {
       const listNames = await todoList.getAllListNames();
-      assert.equal(listNames, `${FIRST_LIST}||${SECOND_LIST}`);
+      assert.equal(listNames[0], FIRST_LIST);
+      assert.equal(listNames[1], SECOND_LIST);
     });
   });
 
   // HACK: Test this first to update state of blockchain, so that next test can use that
   describe('updateList', () => {
     it('should be able to update list for the first time', async () => {
-      const items = 'Apple||Banana||Grapes';
-      const itemsChecked = [false, true, false];
-      const listIndex = 1; // second list
-      const tx = await todoList.updateList(listIndex, items, itemsChecked);
+      const items = [{ name: 'Apple', checked: false}, { name: 'Banana', checked: false}, { name: 'Grapes', checked: false}];
+      const tx = await todoList.updateList(SECOND_LIST, items);
       truffleAssert.eventEmitted(tx, 'ListUpdated', (event) => {
         return (
-          event.listIndex === listIndex &&
-          event.items === items &&
-          event.itemsChecked[0] === itemsChecked[0] &&
-          event.itemsChecked[1] === itemsChecked[1] &&
-          event.itemsChecked[2] === itemsChecked[2]
+          event.name === SECOND_LIST
         );
       });
     });
 
     it('should be able to update list for more than once', async () => {
-      const items = 'Apple||Banana||Grapes||Pears';
-      const itemsChecked = [true, true, true, true];
-      const listIndex = 1; // second list
-      const tx = await todoList.updateList(listIndex, items, itemsChecked);
+      const items = [{name: 'Apple', checked: true}, {name: 'Banana', checked: true}, {name: 'Grapes', checked: true}, {name: 'Pears', checked: false}];
+      const tx = await todoList.updateList(SECOND_LIST, items);
       truffleAssert.eventEmitted(tx, 'ListUpdated', (event) => {
         return (
-          event.listIndex === listIndex &&
-          event.items === items &&
-          event.itemsChecked === itemsChecked &&
-          event.itemsChecked[0] === itemsChecked[0] &&
-          event.itemsChecked[1] === itemsChecked[1] &&
-          event.itemsChecked[2] === itemsChecked[2] &&
-          event.itemsChecked[3] === itemsChecked[3]
+          event.name === SECOND_LIST
         );
       });
     });
   });
 
   describe('getListItems', () => {
-    it('should return a tuple containing a delimited string containing all task names and an array of booleans containing checked status', async () => {
-      const items = await todoList.getListItems(1);
-      assert.equal(items.names, 'Apple||Banana||Grapes||Pears');
-      assert.ok(items.itemsChecked[0]);
-      assert.ok(items.itemsChecked[1]);
-      assert.ok(items.itemsChecked[2]);
-      assert.ok(items.itemsChecked[3]);
+    it('should return an array containing all task names and checked status', async () => {
+      const items = await todoList.getListItems(SECOND_LIST);
+      assert.equal(items[0].name, 'Apple');
+      assert.equal(items[0].checked, true);
+      assert.equal(items[1].name, 'Banana');
+      assert.equal(items[1].checked, true);
+      assert.equal(items[2].name, 'Grapes');
+      assert.equal(items[2].checked, true);
+      assert.equal(items[3].name, 'Pears');
+      assert.equal(items[3].checked, false);
     });
   });
 });
