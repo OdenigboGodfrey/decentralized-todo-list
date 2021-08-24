@@ -2,221 +2,180 @@
   "contractName": "TodoList",
   "abi": [
     {
-      "constant": false,
-      "inputs": [
-        {
-          "internalType": "string",
-          "name": "listName",
-          "type": "string"
-        }
-      ],
+      "inputs": [],
       "name": "createList",
       "outputs": [],
-      "payable": false,
       "stateMutability": "nonpayable",
       "type": "function"
     },
     {
-      "constant": true,
       "inputs": [],
       "name": "getAllListNames",
       "outputs": [
         {
           "internalType": "string",
-          "name": "lists",
+          "name": "",
           "type": "string"
         }
       ],
-      "payable": false,
       "stateMutability": "view",
       "type": "function"
     },
     {
-      "constant": true,
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "listIndex",
-          "type": "uint256"
-        }
-      ],
+      "inputs": [],
       "name": "getListItems",
       "outputs": [
         {
           "internalType": "string",
-          "name": "itemNames",
+          "name": "",
           "type": "string"
-        },
-        {
-          "internalType": "bool[]",
-          "name": "itemsChecked",
-          "type": "bool[]"
         }
       ],
-      "payable": false,
       "stateMutability": "view",
       "type": "function"
     },
     {
-      "constant": false,
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "listIndex",
-          "type": "uint256"
-        },
-        {
-          "internalType": "string",
-          "name": "items",
-          "type": "string"
-        },
-        {
-          "internalType": "bool[]",
-          "name": "itemsChecked",
-          "type": "bool[]"
-        }
-      ],
+      "inputs": [],
       "name": "updateList",
       "outputs": [],
-      "payable": false,
       "stateMutability": "nonpayable",
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"listName\",\"type\":\"string\"}],\"name\":\"createList\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getAllListNames\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"lists\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"listIndex\",\"type\":\"uint256\"}],\"name\":\"getListItems\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"itemNames\",\"type\":\"string\"},{\"internalType\":\"bool[]\",\"name\":\"itemsChecked\",\"type\":\"bool[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"listIndex\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"items\",\"type\":\"string\"},{\"internalType\":\"bool[]\",\"name\":\"itemsChecked\",\"type\":\"bool[]\"}],\"name\":\"updateList\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/bguillen/Documents/sandbox/dapp-pocs/dmvp-projects/todo-list/contracts/TodoList.sol\":\"TodoList\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/bguillen/Documents/sandbox/dapp-pocs/dmvp-projects/todo-list/contracts/TodoList.sol\":{\"keccak256\":\"0xdf981e2f1af72281814aab9b589ebe9dae8d7e1cc8d7d80968420d329deaa66f\",\"urls\":[\"bzz-raw://0e4c3c2abaf1b2797c5f8d9cf564548e0b7f6304a8a7c4d42349da327a59ffe0\",\"dweb:/ipfs/QmZjkvSjGu5o43fadPc3c3GVP64yAa8oTJzfeApMVeetAn\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b50610421806100206000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c806355adb521146100515780635d27ddb414610140578063b8dcc68f146101c3578063e723805c1461027e575b600080fd5b61007d6004803603602081101561006757600080fd5b81019080803590602001909291905050506103d7565b604051808060200180602001838103835285818151815260200191508051906020019080838360005b838110156100c15780820151818401526020810190506100a6565b50505050905090810190601f1680156100ee5780820380516001836020036101000a031916815260200191505b50838103825284818151815260200191508051906020019060200280838360005b8381101561012a57808201518184015260208101905061010f565b5050505090500194505050505060405180910390f35b6101486103df565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561018857808201518184015260208101905061016d565b50505050905090810190601f1680156101b55780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b61027c600480360360208110156101d957600080fd5b81019080803590602001906401000000008111156101f657600080fd5b82018360208201111561020857600080fd5b8035906020019184600183028401116401000000008311171561022a57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506103e4565b005b6103d56004803603606081101561029457600080fd5b8101908080359060200190929190803590602001906401000000008111156102bb57600080fd5b8201836020820111156102cd57600080fd5b803590602001918460018302840111640100000000831117156102ef57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019064010000000081111561035257600080fd5b82018360208201111561036457600080fd5b8035906020019184602083028401116401000000008311171561038657600080fd5b919080806020026020016040519081016040528093929190818152602001838360200280828437600081840152601f19601f8201169050808301925050505050505091929192905050506103e7565b005b606080915091565b606090565b50565b50505056fea265627a7a723158204290b13cdbb1f519c865a3de00af3c1607c52d47dcf0bbbf8605f7eec752f28164736f6c63430005100032",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c806355adb521146100515780635d27ddb414610140578063b8dcc68f146101c3578063e723805c1461027e575b600080fd5b61007d6004803603602081101561006757600080fd5b81019080803590602001909291905050506103d7565b604051808060200180602001838103835285818151815260200191508051906020019080838360005b838110156100c15780820151818401526020810190506100a6565b50505050905090810190601f1680156100ee5780820380516001836020036101000a031916815260200191505b50838103825284818151815260200191508051906020019060200280838360005b8381101561012a57808201518184015260208101905061010f565b5050505090500194505050505060405180910390f35b6101486103df565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561018857808201518184015260208101905061016d565b50505050905090810190601f1680156101b55780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b61027c600480360360208110156101d957600080fd5b81019080803590602001906401000000008111156101f657600080fd5b82018360208201111561020857600080fd5b8035906020019184600183028401116401000000008311171561022a57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506103e4565b005b6103d56004803603606081101561029457600080fd5b8101908080359060200190929190803590602001906401000000008111156102bb57600080fd5b8201836020820111156102cd57600080fd5b803590602001918460018302840111640100000000831117156102ef57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019064010000000081111561035257600080fd5b82018360208201111561036457600080fd5b8035906020019184602083028401116401000000008311171561038657600080fd5b919080806020026020016040519081016040528093929190818152602001838360200280828437600081840152601f19601f8201169050808301925050505050505091929192905050506103e7565b005b606080915091565b606090565b50565b50505056fea265627a7a723158204290b13cdbb1f519c865a3de00af3c1607c52d47dcf0bbbf8605f7eec752f28164736f6c63430005100032",
-  "sourceMap": "36:392:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;36:392:2;;;;;;;",
-  "deployedSourceMap": "36:392:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;36:392:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;203:118;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;203:118:2;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;203:118:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;203:118:2;;;;;;;;;;;;;;;;;;;122:75;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;122:75:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;59:57;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;59:57:2;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;59:57:2;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;59:57:2;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;59:57:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;59:57:2;;;;;;;;;;;;;;;:::i;:::-;;327:98;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;327:98:2;;;;;;;;;;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;327:98:2;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;327:98:2;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;327:98:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;327:98:2;;;;;;;;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;327:98:2;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;327:98:2;;;;;;101:9:-1;95:2;81:12;77:21;67:8;63:36;60:51;39:11;25:12;22:29;11:108;8:2;;;132:1;129;122:12;8:2;327:98:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;327:98:2;;;;;;;;;;;;;;;:::i;:::-;;203:118;262:23;287:26;203:118;;;:::o;122:75::-;170:19;122:75;:::o;59:57::-;;:::o;327:98::-;;;;:::o",
-  "source": "pragma solidity >=0.4.21 <0.7.0;\r\n\r\ncontract TodoList {\r\n  function createList(string memory listName) public {\r\n  }\r\n\r\n  function getAllListNames() public view returns (string memory lists) {\r\n  }\r\n\r\n  function getListItems(uint listIndex) public view returns (string memory itemNames, bool[] memory itemsChecked) {\r\n  }\r\n\r\n  function updateList(uint listIndex, string memory items, bool[] memory itemsChecked) public {\r\n  }\r\n}",
-  "sourcePath": "C:/Users/bguillen/Documents/sandbox/dapp-pocs/dmvp-projects/todo-list/contracts/TodoList.sol",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"createList\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAllListNames\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getListItems\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"updateList\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/bguillen/Documents/sandbox/dapp-pocs/dmvp-projects/decentralized-todo-list/contracts/TodoList.sol\":\"TodoList\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/bguillen/Documents/sandbox/dapp-pocs/dmvp-projects/decentralized-todo-list/contracts/TodoList.sol\":{\"keccak256\":\"0xffd62add381be308d7cc2d5255bdbf566f7400115d1c0d88b999ba43307808b1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://953232b644b679750b17222c44e49b17d7bc9983cbca0cd21d3265484bd66f6c\",\"dweb:/ipfs/Qmf1X4shDy9yTh5nh7RH2ZGGNJXLotZjuwZWqXjSxc6Ci9\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610210806100206000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c80630fab4d25146100515780631ae9dba31461005b5780635d27ddb414610065578063b8b6b7a814610083575b600080fd5b6100596100a1565b005b6100636100a3565b005b61006d6100a5565b60405161007a9190610158565b60405180910390f35b61008b6100e2565b6040516100989190610158565b60405180910390f35b565b565b60606040518060400160405280600b81526020017f68656c6c6f20776f726c64000000000000000000000000000000000000000000815250905090565b60606040518060400160405280600b81526020017f68656c6c6f20776f726c64000000000000000000000000000000000000000000815250905090565b600061012a8261017a565b6101348185610185565b9350610144818560208601610196565b61014d816101c9565b840191505092915050565b60006020820190508181036000830152610172818461011f565b905092915050565b600081519050919050565b600082825260208201905092915050565b60005b838110156101b4578082015181840152602081019050610199565b838111156101c3576000848401525b50505050565b6000601f19601f830116905091905056fea26469706673582212202f47519990abb91eb608baed8264065dac0c62048cc43023e5e485fb3bb2a44264736f6c63430008070033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c80630fab4d25146100515780631ae9dba31461005b5780635d27ddb414610065578063b8b6b7a814610083575b600080fd5b6100596100a1565b005b6100636100a3565b005b61006d6100a5565b60405161007a9190610158565b60405180910390f35b61008b6100e2565b6040516100989190610158565b60405180910390f35b565b565b60606040518060400160405280600b81526020017f68656c6c6f20776f726c64000000000000000000000000000000000000000000815250905090565b60606040518060400160405280600b81526020017f68656c6c6f20776f726c64000000000000000000000000000000000000000000815250905090565b600061012a8261017a565b6101348185610185565b9350610144818560208601610196565b61014d816101c9565b840191505092915050565b60006020820190508181036000830152610172818461011f565b905092915050565b600081519050919050565b600082825260208201905092915050565b60005b838110156101b4578082015181840152602081019050610199565b838111156101c3576000848401525b50505050565b6000601f19601f830116905091905056fea26469706673582212202f47519990abb91eb608baed8264065dac0c62048cc43023e5e485fb3bb2a44264736f6c63430008070033",
+  "immutableReferences": {},
+  "sourceMap": "60:303:1:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "60:303:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;83:35;;;:::i;:::-;;325;;;:::i;:::-;;124:96;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;226:93;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;83:35;:::o;325:::-;:::o;124:96::-;172:13;194:20;;;;;;;;;;;;;;;;;;;124:96;:::o;226:93::-;271:13;293:20;;;;;;;;;;;;;;;;;;;226:93;:::o;7:364:2:-;95:3;123:39;156:5;123:39;:::i;:::-;178:71;242:6;237:3;178:71;:::i;:::-;171:78;;258:52;303:6;298:3;291:4;284:5;280:16;258:52;:::i;:::-;335:29;357:6;335:29;:::i;:::-;330:3;326:39;319:46;;99:272;7:364;;;;:::o;377:313::-;490:4;528:2;517:9;513:18;505:26;;577:9;571:4;567:20;563:1;552:9;548:17;541:47;605:78;678:4;669:6;605:78;:::i;:::-;597:86;;377:313;;;;:::o;696:99::-;748:6;782:5;776:12;766:22;;696:99;;;:::o;801:169::-;885:11;919:6;914:3;907:19;959:4;954:3;950:14;935:29;;801:169;;;;:::o;976:307::-;1044:1;1054:113;1068:6;1065:1;1062:13;1054:113;;;1153:1;1148:3;1144:11;1138:18;1134:1;1129:3;1125:11;1118:39;1090:2;1087:1;1083:10;1078:15;;1054:113;;;1185:6;1182:1;1179:13;1176:101;;;1265:1;1256:6;1251:3;1247:16;1240:27;1176:101;1025:258;976:307;;;:::o;1289:102::-;1330:6;1381:2;1377:7;1372:2;1365:5;1361:14;1357:28;1347:38;;1289:102;;;:::o",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\ncontract TodoList {\r\n  function createList() public {\r\n  }\r\n\r\n  function getAllListNames() public view returns (string memory) {\r\n    return \"hello world\";\r\n  }\r\n\r\n  function getListItems() public view returns (string memory) {\r\n    return \"hello world\";\r\n  }\r\n\r\n  function updateList() public {\r\n  }\r\n}",
+  "sourcePath": "C:/Users/bguillen/Documents/sandbox/dapp-pocs/dmvp-projects/decentralized-todo-list/contracts/TodoList.sol",
   "ast": {
-    "absolutePath": "/C/Users/bguillen/Documents/sandbox/dapp-pocs/dmvp-projects/todo-list/contracts/TodoList.sol",
+    "absolutePath": "/C/Users/bguillen/Documents/sandbox/dapp-pocs/dmvp-projects/decentralized-todo-list/contracts/TodoList.sol",
     "exportedSymbols": {
       "TodoList": [
-        96
+        63
       ]
     },
-    "id": 97,
+    "id": 64,
+    "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 61,
+        "id": 38,
         "literals": [
           "solidity",
-          ">=",
-          "0.4",
-          ".21",
-          "<",
-          "0.7",
+          "^",
+          "0.8",
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:32:2"
+        "src": "33:23:1"
       },
       {
+        "abstract": false,
         "baseContracts": [],
         "contractDependencies": [],
         "contractKind": "contract",
-        "documentation": null,
         "fullyImplemented": true,
-        "id": 96,
+        "id": 63,
         "linearizedBaseContracts": [
-          96
+          63
         ],
         "name": "TodoList",
+        "nameLocation": "69:8:1",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 66,
+              "id": 41,
               "nodeType": "Block",
-              "src": "110:6:2",
+              "src": "112:6:1",
               "statements": []
             },
-            "documentation": null,
-            "id": 67,
+            "functionSelector": "0fab4d25",
+            "id": 42,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "createList",
+            "nameLocation": "92:10:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 64,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 63,
-                  "name": "listName",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 67,
-                  "src": "79:22:2",
-                  "stateVariable": false,
-                  "storageLocation": "memory",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_string_memory_ptr",
-                    "typeString": "string"
-                  },
-                  "typeName": {
-                    "id": 62,
-                    "name": "string",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "79:6:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_string_storage_ptr",
-                      "typeString": "string"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "78:24:2"
-            },
-            "returnParameters": {
-              "id": 65,
+              "id": 39,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "110:0:2"
+              "src": "102:2:1"
             },
-            "scope": 96,
-            "src": "59:57:2",
+            "returnParameters": {
+              "id": 40,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "112:0:1"
+            },
+            "scope": 63,
+            "src": "83:35:1",
             "stateMutability": "nonpayable",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 72,
+              "id": 49,
               "nodeType": "Block",
-              "src": "191:6:2",
-              "statements": []
+              "src": "187:33:1",
+              "statements": [
+                {
+                  "expression": {
+                    "hexValue": "68656c6c6f20776f726c64",
+                    "id": 47,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "string",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "201:13:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_stringliteral_47173285a8d7341e5e972fc677286384f802f8ef42a5ec5f03bbfa254cb01fad",
+                      "typeString": "literal_string \"hello world\""
+                    },
+                    "value": "hello world"
+                  },
+                  "functionReturnParameters": 46,
+                  "id": 48,
+                  "nodeType": "Return",
+                  "src": "194:20:1"
+                }
+              ]
             },
-            "documentation": null,
-            "id": 73,
+            "functionSelector": "5d27ddb4",
+            "id": 50,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getAllListNames",
+            "nameLocation": "133:15:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 68,
+              "id": 43,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "146:2:2"
+              "src": "148:2:1"
             },
             "returnParameters": {
-              "id": 71,
+              "id": 46,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 70,
-                  "name": "lists",
+                  "id": 45,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 73,
-                  "src": "170:19:2",
+                  "scope": 50,
+                  "src": "172:13:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -224,85 +183,83 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 69,
+                    "id": 44,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "170:6:2",
+                    "src": "172:6:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
                     }
                   },
-                  "value": null,
                   "visibility": "internal"
                 }
               ],
-              "src": "169:21:2"
+              "src": "171:15:1"
             },
-            "scope": 96,
-            "src": "122:75:2",
+            "scope": 63,
+            "src": "124:96:1",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 83,
+              "id": 57,
               "nodeType": "Block",
-              "src": "315:6:2",
-              "statements": []
+              "src": "286:33:1",
+              "statements": [
+                {
+                  "expression": {
+                    "hexValue": "68656c6c6f20776f726c64",
+                    "id": 55,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "string",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "300:13:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_stringliteral_47173285a8d7341e5e972fc677286384f802f8ef42a5ec5f03bbfa254cb01fad",
+                      "typeString": "literal_string \"hello world\""
+                    },
+                    "value": "hello world"
+                  },
+                  "functionReturnParameters": 54,
+                  "id": 56,
+                  "nodeType": "Return",
+                  "src": "293:20:1"
+                }
+              ]
             },
-            "documentation": null,
-            "id": 84,
+            "functionSelector": "b8b6b7a8",
+            "id": 58,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getListItems",
+            "nameLocation": "235:12:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 76,
+              "id": 51,
               "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 75,
-                  "name": "listIndex",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 84,
-                  "src": "225:14:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 74,
-                    "name": "uint",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "225:4:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "224:16:2"
+              "parameters": [],
+              "src": "247:2:1"
             },
             "returnParameters": {
-              "id": 82,
+              "id": 54,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 78,
-                  "name": "itemNames",
+                  "id": 53,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 84,
-                  "src": "262:23:2",
+                  "scope": 58,
+                  "src": "271:13:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -310,318 +267,193 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 77,
+                    "id": 52,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "262:6:2",
+                    "src": "271:6:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
                     }
                   },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 81,
-                  "name": "itemsChecked",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 84,
-                  "src": "287:26:2",
-                  "stateVariable": false,
-                  "storageLocation": "memory",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_array$_t_bool_$dyn_memory_ptr",
-                    "typeString": "bool[]"
-                  },
-                  "typeName": {
-                    "baseType": {
-                      "id": 79,
-                      "name": "bool",
-                      "nodeType": "ElementaryTypeName",
-                      "src": "287:4:2",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_bool",
-                        "typeString": "bool"
-                      }
-                    },
-                    "id": 80,
-                    "length": null,
-                    "nodeType": "ArrayTypeName",
-                    "src": "287:6:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_array$_t_bool_$dyn_storage_ptr",
-                      "typeString": "bool[]"
-                    }
-                  },
-                  "value": null,
                   "visibility": "internal"
                 }
               ],
-              "src": "261:53:2"
+              "src": "270:15:1"
             },
-            "scope": 96,
-            "src": "203:118:2",
+            "scope": 63,
+            "src": "226:93:1",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 94,
+              "id": 61,
               "nodeType": "Block",
-              "src": "419:6:2",
+              "src": "354:6:1",
               "statements": []
             },
-            "documentation": null,
-            "id": 95,
+            "functionSelector": "1ae9dba3",
+            "id": 62,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "updateList",
+            "nameLocation": "334:10:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 92,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 86,
-                  "name": "listIndex",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 95,
-                  "src": "347:14:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 85,
-                    "name": "uint",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "347:4:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 88,
-                  "name": "items",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 95,
-                  "src": "363:19:2",
-                  "stateVariable": false,
-                  "storageLocation": "memory",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_string_memory_ptr",
-                    "typeString": "string"
-                  },
-                  "typeName": {
-                    "id": 87,
-                    "name": "string",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "363:6:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_string_storage_ptr",
-                      "typeString": "string"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 91,
-                  "name": "itemsChecked",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 95,
-                  "src": "384:26:2",
-                  "stateVariable": false,
-                  "storageLocation": "memory",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_array$_t_bool_$dyn_memory_ptr",
-                    "typeString": "bool[]"
-                  },
-                  "typeName": {
-                    "baseType": {
-                      "id": 89,
-                      "name": "bool",
-                      "nodeType": "ElementaryTypeName",
-                      "src": "384:4:2",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_bool",
-                        "typeString": "bool"
-                      }
-                    },
-                    "id": 90,
-                    "length": null,
-                    "nodeType": "ArrayTypeName",
-                    "src": "384:6:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_array$_t_bool_$dyn_storage_ptr",
-                      "typeString": "bool[]"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "346:65:2"
-            },
-            "returnParameters": {
-              "id": 93,
+              "id": 59,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "419:0:2"
+              "src": "344:2:1"
             },
-            "scope": 96,
-            "src": "327:98:2",
+            "returnParameters": {
+              "id": 60,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "354:0:1"
+            },
+            "scope": 63,
+            "src": "325:35:1",
             "stateMutability": "nonpayable",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 97,
-        "src": "36:392:2"
+        "scope": 64,
+        "src": "60:303:1",
+        "usedErrors": []
       }
     ],
-    "src": "0:428:2"
+    "src": "33:330:1"
   },
   "legacyAST": {
-    "absolutePath": "/C/Users/bguillen/Documents/sandbox/dapp-pocs/dmvp-projects/todo-list/contracts/TodoList.sol",
+    "absolutePath": "/C/Users/bguillen/Documents/sandbox/dapp-pocs/dmvp-projects/decentralized-todo-list/contracts/TodoList.sol",
     "exportedSymbols": {
       "TodoList": [
-        96
+        63
       ]
     },
-    "id": 97,
+    "id": 64,
+    "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 61,
+        "id": 38,
         "literals": [
           "solidity",
-          ">=",
-          "0.4",
-          ".21",
-          "<",
-          "0.7",
+          "^",
+          "0.8",
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:32:2"
+        "src": "33:23:1"
       },
       {
+        "abstract": false,
         "baseContracts": [],
         "contractDependencies": [],
         "contractKind": "contract",
-        "documentation": null,
         "fullyImplemented": true,
-        "id": 96,
+        "id": 63,
         "linearizedBaseContracts": [
-          96
+          63
         ],
         "name": "TodoList",
+        "nameLocation": "69:8:1",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 66,
+              "id": 41,
               "nodeType": "Block",
-              "src": "110:6:2",
+              "src": "112:6:1",
               "statements": []
             },
-            "documentation": null,
-            "id": 67,
+            "functionSelector": "0fab4d25",
+            "id": 42,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "createList",
+            "nameLocation": "92:10:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 64,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 63,
-                  "name": "listName",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 67,
-                  "src": "79:22:2",
-                  "stateVariable": false,
-                  "storageLocation": "memory",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_string_memory_ptr",
-                    "typeString": "string"
-                  },
-                  "typeName": {
-                    "id": 62,
-                    "name": "string",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "79:6:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_string_storage_ptr",
-                      "typeString": "string"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "78:24:2"
-            },
-            "returnParameters": {
-              "id": 65,
+              "id": 39,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "110:0:2"
+              "src": "102:2:1"
             },
-            "scope": 96,
-            "src": "59:57:2",
+            "returnParameters": {
+              "id": 40,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "112:0:1"
+            },
+            "scope": 63,
+            "src": "83:35:1",
             "stateMutability": "nonpayable",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 72,
+              "id": 49,
               "nodeType": "Block",
-              "src": "191:6:2",
-              "statements": []
+              "src": "187:33:1",
+              "statements": [
+                {
+                  "expression": {
+                    "hexValue": "68656c6c6f20776f726c64",
+                    "id": 47,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "string",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "201:13:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_stringliteral_47173285a8d7341e5e972fc677286384f802f8ef42a5ec5f03bbfa254cb01fad",
+                      "typeString": "literal_string \"hello world\""
+                    },
+                    "value": "hello world"
+                  },
+                  "functionReturnParameters": 46,
+                  "id": 48,
+                  "nodeType": "Return",
+                  "src": "194:20:1"
+                }
+              ]
             },
-            "documentation": null,
-            "id": 73,
+            "functionSelector": "5d27ddb4",
+            "id": 50,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getAllListNames",
+            "nameLocation": "133:15:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 68,
+              "id": 43,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "146:2:2"
+              "src": "148:2:1"
             },
             "returnParameters": {
-              "id": 71,
+              "id": 46,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 70,
-                  "name": "lists",
+                  "id": 45,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 73,
-                  "src": "170:19:2",
+                  "scope": 50,
+                  "src": "172:13:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -629,85 +461,83 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 69,
+                    "id": 44,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "170:6:2",
+                    "src": "172:6:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
                     }
                   },
-                  "value": null,
                   "visibility": "internal"
                 }
               ],
-              "src": "169:21:2"
+              "src": "171:15:1"
             },
-            "scope": 96,
-            "src": "122:75:2",
+            "scope": 63,
+            "src": "124:96:1",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 83,
+              "id": 57,
               "nodeType": "Block",
-              "src": "315:6:2",
-              "statements": []
+              "src": "286:33:1",
+              "statements": [
+                {
+                  "expression": {
+                    "hexValue": "68656c6c6f20776f726c64",
+                    "id": 55,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "string",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "300:13:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_stringliteral_47173285a8d7341e5e972fc677286384f802f8ef42a5ec5f03bbfa254cb01fad",
+                      "typeString": "literal_string \"hello world\""
+                    },
+                    "value": "hello world"
+                  },
+                  "functionReturnParameters": 54,
+                  "id": 56,
+                  "nodeType": "Return",
+                  "src": "293:20:1"
+                }
+              ]
             },
-            "documentation": null,
-            "id": 84,
+            "functionSelector": "b8b6b7a8",
+            "id": 58,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getListItems",
+            "nameLocation": "235:12:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 76,
+              "id": 51,
               "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 75,
-                  "name": "listIndex",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 84,
-                  "src": "225:14:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 74,
-                    "name": "uint",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "225:4:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "224:16:2"
+              "parameters": [],
+              "src": "247:2:1"
             },
             "returnParameters": {
-              "id": 82,
+              "id": 54,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 78,
-                  "name": "itemNames",
+                  "id": 53,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 84,
-                  "src": "262:23:2",
+                  "scope": 58,
+                  "src": "271:13:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -715,202 +545,82 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 77,
+                    "id": 52,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "262:6:2",
+                    "src": "271:6:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
                     }
                   },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 81,
-                  "name": "itemsChecked",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 84,
-                  "src": "287:26:2",
-                  "stateVariable": false,
-                  "storageLocation": "memory",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_array$_t_bool_$dyn_memory_ptr",
-                    "typeString": "bool[]"
-                  },
-                  "typeName": {
-                    "baseType": {
-                      "id": 79,
-                      "name": "bool",
-                      "nodeType": "ElementaryTypeName",
-                      "src": "287:4:2",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_bool",
-                        "typeString": "bool"
-                      }
-                    },
-                    "id": 80,
-                    "length": null,
-                    "nodeType": "ArrayTypeName",
-                    "src": "287:6:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_array$_t_bool_$dyn_storage_ptr",
-                      "typeString": "bool[]"
-                    }
-                  },
-                  "value": null,
                   "visibility": "internal"
                 }
               ],
-              "src": "261:53:2"
+              "src": "270:15:1"
             },
-            "scope": 96,
-            "src": "203:118:2",
+            "scope": 63,
+            "src": "226:93:1",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 94,
+              "id": 61,
               "nodeType": "Block",
-              "src": "419:6:2",
+              "src": "354:6:1",
               "statements": []
             },
-            "documentation": null,
-            "id": 95,
+            "functionSelector": "1ae9dba3",
+            "id": 62,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "updateList",
+            "nameLocation": "334:10:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 92,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 86,
-                  "name": "listIndex",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 95,
-                  "src": "347:14:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 85,
-                    "name": "uint",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "347:4:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 88,
-                  "name": "items",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 95,
-                  "src": "363:19:2",
-                  "stateVariable": false,
-                  "storageLocation": "memory",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_string_memory_ptr",
-                    "typeString": "string"
-                  },
-                  "typeName": {
-                    "id": 87,
-                    "name": "string",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "363:6:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_string_storage_ptr",
-                      "typeString": "string"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 91,
-                  "name": "itemsChecked",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 95,
-                  "src": "384:26:2",
-                  "stateVariable": false,
-                  "storageLocation": "memory",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_array$_t_bool_$dyn_memory_ptr",
-                    "typeString": "bool[]"
-                  },
-                  "typeName": {
-                    "baseType": {
-                      "id": 89,
-                      "name": "bool",
-                      "nodeType": "ElementaryTypeName",
-                      "src": "384:4:2",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_bool",
-                        "typeString": "bool"
-                      }
-                    },
-                    "id": 90,
-                    "length": null,
-                    "nodeType": "ArrayTypeName",
-                    "src": "384:6:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_array$_t_bool_$dyn_storage_ptr",
-                      "typeString": "bool[]"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "346:65:2"
-            },
-            "returnParameters": {
-              "id": 93,
+              "id": 59,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "419:0:2"
+              "src": "344:2:1"
             },
-            "scope": 96,
-            "src": "327:98:2",
+            "returnParameters": {
+              "id": 60,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "354:0:1"
+            },
+            "scope": 63,
+            "src": "325:35:1",
             "stateMutability": "nonpayable",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 97,
-        "src": "36:392:2"
+        "scope": 64,
+        "src": "60:303:1",
+        "usedErrors": []
       }
     ],
-    "src": "0:428:2"
+    "src": "33:330:1"
   },
   "compiler": {
     "name": "solc",
-    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+    "version": "0.8.7+commit.e28d00a7.Emscripten.clang"
   },
   "networks": {},
   "schemaVersion": "3.2.3",
-  "updatedAt": "2021-08-20T17:06:25.384Z",
+  "updatedAt": "2021-08-24T13:54:37.206Z",
   "devdoc": {
-    "methods": {}
+    "kind": "dev",
+    "methods": {},
+    "version": 1
   },
   "userdoc": {
-    "methods": {}
+    "kind": "user",
+    "methods": {},
+    "version": 1
   }
 }
