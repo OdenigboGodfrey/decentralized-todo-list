@@ -15,10 +15,9 @@ contract('TodoList', accounts => {
     it('should add the new and empty list for a given user', async () => {
       const tx = await todoList.createList(FIRST_LIST);
       truffleAssert.eventEmitted(tx, 'ListCreated', (event) => {
-        const { name, index } = event;
+        const { name } = event;
         return (
-          name === FIRST_LIST &&
-          parseInt(index.toString()) === 0
+          name === FIRST_LIST
         );
       });
     });
@@ -26,10 +25,9 @@ contract('TodoList', accounts => {
     it('should be able to add a second list for a given user', async () => {
       const tx = await todoList.createList(SECOND_LIST);
       truffleAssert.eventEmitted(tx, 'ListCreated', (event) => {
-        const { name, index } = event;
+        const { name } = event;
         return (
-          name === SECOND_LIST &&
-          index === 1
+          name === SECOND_LIST
         );
       })
     });
