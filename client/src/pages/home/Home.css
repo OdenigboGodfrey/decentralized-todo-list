@@ -2,7 +2,7 @@
   min-height: 100vh;
 }
 
-.home .list {
+.home .list-item {
   border: 1px solid #ced4da; /* Same as input group */
   border-radius: 10px;
   cursor: pointer;

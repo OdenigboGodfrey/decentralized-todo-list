@@ -4,6 +4,7 @@ import {
   Row,
   Col
 } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 import LoadingOverlay from 'react-loading-overlay';
 import TodoListForm from '../../components/todo-list-form/TodoListForm';
 
@@ -23,7 +24,7 @@ export function Home({ lists, onSubmit }) {
       </Row>
       <Row className="lists-container">
         <div className="section-header lists-header">Lists</div>
-        <div className="lists">{lists.map((list, index) => (<List key={index} name={list.name}/>))}</div>
+        <div className="lists">{lists.map((list, index) => (<List key={index} name={list}/>))}</div>
       </Row>
     </Container>
   );
@@ -32,12 +33,17 @@ export function Home({ lists, onSubmit }) {
 function List({
   name
 }) {
+  const history = useHistory();
+
   return (
-    <div className="list">{name}</div>
+    <div className="list-item" onClick={() => history.push(`/list?name="${name}"`)}>{name}</div>
   );
 }
 
-export function HomeWrapper() {
+export function HomeWrapper({
+  account,
+  todoList
+}) {
   const [lists, setLists] = useState([]);
   const [submittingNewList, setSubmittingNewList] = useState(false);
 
@@ -45,33 +51,35 @@ export function HomeWrapper() {
    * get lists
    */
   useEffect(() => {
-    setLists(getLists());
+    (async function() {
+      setupCreateListListener();
+      setLists(await getLists());
+    })();
   }, []);
 
-  /****************************
-   * MOCK
-   * Used until back-end is
-   * implemented
-   ****************************/
+  async function getLists() {
+    return await todoList.methods.getAllListNames().call();
+  }
 
-  function getLists() {
-    return [
-      { name: 'List 1' },
-      { name: 'List 2' },
-      { name: 'List 3' },
-      { name: 'List 4' }
-    ]
+  async function onSubmit(value) {
+    setSubmittingNewList(true);
+    // setTimeout(() => {
+    //   setLists(previousState => ([...previousState, { name: value }]));
+    //   setSubmittingNewList(false);
+    // }, 5000);
+    // add new post to blockchain
+    await todoList.methods.createList(value).send({ from: account });
   }
 
   /**
-   * MOCK SUBMIT
+   * @description Setting event handler for new post
    */
-  function onSubmit(value) {
-    setSubmittingNewList(true);
-    setTimeout(() => {
-      setLists(previousState => ([...previousState, { name: value }]));
+  function setupCreateListListener() {
+    todoList.events.ListCreated({}, (error, contractEvent) => {
+      console.log('contractEvent.returnValues.name', contractEvent.returnValues.name);
+      setLists(previousState => [...previousState, contractEvent.returnValues.name])
       setSubmittingNewList(false);
-    }, 5000);
+    });
   }
 
   return (

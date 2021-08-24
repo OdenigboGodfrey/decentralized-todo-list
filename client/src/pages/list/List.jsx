@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import  { Container, Col, Form, Row, Button } from 'react-bootstrap';
+import { useLocation } from 'react-router-dom';
 import LoadingOverlay from 'react-loading-overlay';
 import TodoListForm from '../../components/todo-list-form/TodoListForm';
 
@@ -46,7 +47,15 @@ export function List({
   );
 }
 
-export function ListWrapper() {
+function useQuery() {
+  return new URLSearchParams(useLocation().search);
+}
+
+export function ListWrapper({
+  account,
+  todoList
+}) {
+  const listName = useQuery().get('name');
   const [items, setItems] = useState([]);
   const [saving, setSaving] = useState(false);
 
@@ -54,7 +63,10 @@ export function ListWrapper() {
    * get items
    */
   useEffect(() => {
-    setItems(getItems());
+    (async function() {
+      setupUpdateListListener();
+      setItems(await getItems());
+    })();
   }, []);
 
   /****************************
@@ -72,25 +84,30 @@ export function ListWrapper() {
     });
   }
 
-  function getItems() {
-    return [
-      { name: 'Item 1', checked: false },
-      { name: 'Item 2', checked: false },
-      { name: 'Item 3', checked: false },
-      { name: 'Item 4', checked: false }
-    ]
+  async function getItems() {
+    return await todoList.methods.getListItems(listName).call();
   }
 
-  function onSave(event) {
+  async function onSave(event) {
     event.preventDefault();
     setSaving(true);
-    setTimeout(() => {
-      setSaving(false);
-    }, 3000);
+    // setTimeout(() => {
+    //   setSaving(false);
+    // }, 3000);
+    await todoList.methods.updateList(listName, items).send({ from: account });
   }
 
   function onSubmit(value) {
     setItems(previousState => ([...previousState, { name: value, checked: false }]));
+  }
+
+  /**
+   * @description Setting event handler for new post
+   */
+  function setupUpdateListListener() {
+    todoList.events.ListUpdated({}, () => {
+      setSaving(false);
+    });
   }
 
   return (

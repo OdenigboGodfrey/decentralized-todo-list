@@ -15,7 +15,7 @@ const Template = (args) => {
   }
 
   function onSubmit(value) {
-    setLists(previousState => ([...previousState, { name: value }]));
+    setLists(previousState => ([...previousState, value]));
   }
 
   return (
@@ -30,7 +30,7 @@ const Template = (args) => {
 export const HomeStory = Template.bind({});
 HomeStory.args = {
   originalList: [
-    { name: 'First List' },
-    { name: 'Second List' }
+    'First List',
+    'Second List'
   ]
 };
