@@ -1,15 +1,18 @@
-pragma solidity >=0.4.21 <0.7.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 
 contract TodoList {
-  function createList(string memory listName) public {
+  function createList() public {
   }
 
-  function getAllListNames() public view returns (string memory lists) {
+  function getAllListNames() public view returns (string memory) {
+    return "hello world";
   }
 
-  function getListItems(uint listIndex) public view returns (string memory itemNames, bool[] memory itemsChecked) {
+  function getListItems() public view returns (string memory) {
+    return "hello world";
   }
 
-  function updateList(uint listIndex, string memory items, bool[] memory itemsChecked) public {
+  function updateList() public {
   }
 }
